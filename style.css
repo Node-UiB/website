@@ -33,8 +33,6 @@ main {
 }
 
 .navbar{
-    width: 5rem;
-    height: 100vh;
     position: fixed;
     background-color: var(--bg-primary);
     transition: 200ms ease;
@@ -115,11 +113,46 @@ main {
     margin: 0 1.5rem;
 }
 
-.navbar:hover {
-    width: 16rem;
+
+
+
+
+/* Small screens*/
+@media only screen and (max-width: 600px) {
+    .navbar {
+        bottom: 0;
+        width: 100vw;
+        height: 5rem;
+        display: block;
+    }
+
+    .navbar-nav {
+        flex-direction: row;
+    }
+
+    .nav-link {
+        justify-content: center;
+    }
+
+    main {
+        margin: 0;
+    }
 }
 
-.navbar:hover .link-text {
-    display: block;
-}
+/*Large screens*/
+@media only screen and (min-width: 600px) {
+    .navbar {
+        top: 0;
+        width: 5rem;
+        height: 100vh;
+    }
 
+    .navbar:hover {
+        width: 16rem;
+    }
+
+    .navbar:hover .link-text {
+        display: block;
+        transition: opacity var(--transition-speed);
+    }
+}
