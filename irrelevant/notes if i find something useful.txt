@@ -1,0 +1,129 @@
+tags define layouts. Tells how it should look and what content to have.
+Creates a skeleton with the tags. Different info about what is in the file.
+
+<!DOCTYPE> -singe tag- tells browser what type of file it is. 
+
+containter tag: <>something<>
+
+- When creating a container tag you start with the opening tag <name>, do something inside, and finish with the closing tag </name>.
+
+This is the overall, toplevel container tag
+<html>
+</html>
+
+Head of the doc defines data about the doc, the title, discription, other attributes, like images. Import any recourses. Link to other types of files like css
+in the head. It is like the constructor in a class. The settings or controll center. Stores the metadata. 
+
+Body of the doc is where everything that is going to be displayed is. All the content of the webpage. Rendered by the browser
+
+Webpage parses through the tags and figures out how to display information. 
+
+
+base skeleton
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+
+    </body>
+</html>
+
+tags can contain attributes. You pass the tag some custom information. The tags can then use those properties. 
+
+comments - <!-- comment -->
+
+a site generally consists of 3 parts. A header, the main part and the footer
+
+Good organisation for reading the file later
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="" content="">
+        <title></title>
+    </head>
+    <body>
+       <header>
+            <nav>
+
+            </nav>
+       </header>
+       <main>
+            <article>
+                <section>
+                    <aside>
+                    </aside>
+                </section>
+            </article>
+       </main>
+       <footer>
+            
+       </footer>
+    </body>
+</html>
+
+heading hiearchy.
+h1
+    h2
+        h3
+    h2
+
+
+links are used with anchor tag <a> where you set the attribut href to the link, href="link". You can also use files instead of links. It will redirect to them.
+This is useful for the header and especially the navigation to travel between sites.
+Useful to include target attribute to target="_blank" and rel to rel="noopener norefferer". So it opens a new and secure window when clicked. 
+So people dont loose your site.
+
+images are used with the tag <img/>. You set the src attribute to the image location or link. <img src=""/>. Include alt attribute to display something else 
+if the img cant be found or loaded. Good practice to include
+You can resize with width and height attribute. Only using one will automatically give a risized aspect ratio. Using both will give a custom res.
+
+
+Tags:
+
+Single tags:
+<meta> - Defines information about the files
+<meta charset=""> - defines char set for the doc
+<title> - title
+<br/> - break line, adds space on the site
+<hr/> - horizontal line spacer. -------------------------
+<img src="" widht="" height=""> - images
+
+Container tags:
+<h> - heading, the h is followed by a number. 1 big, 6 small. Shrinks from 1 to 6
+<p> - paragraph
+<b> - bold tag
+<i> - italicized text. Kursiv text.
+<big> - makes the thing inside bigger
+<small> - makes the thing inside smaller
+<sub> - subscript, for chemical equations etc
+<sup> - superscript, good for exponents
+<a> - anchor tag. Often used with links
+<a href="link">Some Text</a> - always smart to include rel="noopener norefferer" incase some older web browsers are using the site, to prevent milicious attacks.
+<ul> - unsorted list. Containter for list elements
+<ol> - ordered list. use type attribute to change to letters or numbers or roman numerals etc.
+<li> - list element
+<dl> - Description list. List out items and describe them.
+<dt> - description term. 
+<dd> - description definition
+<table> - creates a table
+<tr> - row in the table
+<td> - table column - has attribute colspan="" that defines how large the column is.
+<caption> - adds a caption. Used in sections.
+
+Structuring:
+<header> - creates the header for the site
+<main> - main part
+<footer> - bottom.
+<nav> - navigation tag, stores navigational elements.
+<article> - article section
+<section> - section of the doc. Good for structuring.
+<aside> - on the side of the site, like for ads or information. 
+
+Attributes:
+
+style - changes the style of a tag
+<p style="color: color; background-color: color;">
+
