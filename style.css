@@ -1,3 +1,9 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Share Tech Mono', monospace;
+}
+
 :root {
     font-size: 16px;
     font-family: 'Open Sans';
@@ -6,13 +12,6 @@
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --bg-third: #28232e;
-}
-
-body {
-    color: black;
-    background-color: white;
-    margin: 0;
-    padding: 0;
 }
 
 body::-webkit-scrollbar {
@@ -24,135 +23,149 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #11701a;
+    background: #54995A;
 }
 
-main {
-    margin-left: 5rem;
-    padding: 1rem;
+/*This makes the background blurred
+.header::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    pointer-events: none;
+  }
+*/
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30, 0.7), rgba(4,9,30, 0.7)), url(images/background_main_site.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
 }
 
-.navbar{
-    position: fixed;
-    background-color: var(--bg-primary);
-    transition: 200ms ease;
-}
-
-.navbar-nav {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+nav {
     display: flex;
-    flex-direction: column;
+    padding: 2% 6%;
+    justify-content: space-between;
     align-items: center;
 }
 
-.nav-item {
-    width: 100%;
+nav img {
+    width: 150px;
 }
 
-.menu_symbol {
+.nav-links {
+    flex: 1;
+    text-align: right;
+}
+
+.nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+
+.nav-links ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.nav-links ul li::after{
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: #54995A;
+    display: block;
+    margin: auto;
+    transition: 400ms ease;
+}
+
+.nav-links ul li:hover::after{
     width: 100%;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin-bottom: 1rem;
+    transition: 300ms ease;
+}
+
+.text-box{
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
-.menu_symbol svg {
-    fill: #b6b6b6;
+.text-box h1{
+    font-size: 82px;
 }
 
-.menu_symbol:hover svg{
-    fill: #000000;
-    transition: 200ms ease;
-}
-
-/*
-<li class="menu_symbol">
-                        <a href="#" class="nav-link">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"> <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
-                            <path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
-                        </a>
-
-                    </li>
-*/
-
-.nav-item:last-child {
-    margin-top: auto;
-}
-
-.nav-link {
-    display: flex;
-    align-items: center;
-    height: 5rem;
-    color: var(--text-primary);
-    text-decoration: none;
-    filter: opacity(0.7);
-    transition: var(--transition-speed);
-}
-
-.nav-link:hover svg{
-    filter: grayscale(0) opacity(1) hue-rotate(210deg) blur(0.5px) brightness(0.5);
-    transition: 500ms ease;
-}
-
-.nav-link:hover {
-    background: var(--bg-secondary);
+.text-box p{
+    margin: 10px 0 40px;
+    font-size: 20px;
     color: white;
 }
 
-.link-text {
+.studie-link{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    font-size: 14px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+    transition: 1000ms ease;
+}
+
+.studie-link:hover{
+    border: 1px solid #54995A;
+    background: #54995A;
+    transition: 1000ms ease;
+}
+
+nav .fa{
     display: none;
-    margin-left: 1rem;
 }
 
-
-.nav-link svg {
-    min-width: 2rem;
-    margin: 0 1.5rem;
-}
-
-
-
-
-
-/* Small screens*/
-@media only screen and (max-width: 600px) {
-    .navbar {
-        bottom: 0;
-        width: 100vw;
-        height: 5rem;
+@media only screen and (max-width: 600px){
+    .text-box h1{
+        font-size: 20px;
+    }
+    .nav-links ul li {
         display: block;
     }
 
-    .navbar-nav {
-        flex-direction: row;
+    nav img {
+        width: 75px;
     }
 
-    .nav-link {
-        justify-content: center;
+    nav .fa{
+        display: block;
+        color: #fff;
+        margin: 10px;
+        font-size: 20px;
+        cursor: pointer;
     }
 
-    main {
-        margin: 0;
-    }
-}
-
-/*Large screens*/
-@media only screen and (min-width: 600px) {
-    .navbar {
-        top: 0;
-        width: 5rem;
+    .nav-links{
+        position: absolute;
+        background: #1e1e24;
         height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 500ms;
     }
 
-    .navbar:hover {
-        width: 16rem;
-    }
-
-    .navbar:hover .link-text {
-        display: block;
-        transition: opacity var(--transition-speed);
+    .nav-links ul{
+        padding: 30px;
     }
 }
